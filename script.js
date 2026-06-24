@@ -75,17 +75,17 @@ one.addEventListener("click",()=>{
 two.addEventListener("click",()=>{
     if(operator.length!==0){
         secondNumber+="2";
-        dresult.textContent+="2";
+        result.textContent+="2";
     }
     else{
         firstNumber+="2";
-        result+="2";
+        result.textContent+="2";
     }
 });
 three.addEventListener("click",()=>{
     if(operator.length!==0){
         secondNumber+="3";
-        result+="3";
+        result.textContent+="3";
     }
     else{
         firstNumber+="3";
@@ -125,7 +125,7 @@ six.addEventListener("click",()=>{
 seven.addEventListener("click",()=>{
     if(operator.length!==0){
         secondNumber+="7"
-        dresult.textContent+="7";
+        result.textContent+="7";
     }
     else{
         firstNumber+="7";
@@ -189,8 +189,8 @@ equals.addEventListener("click",()=>{
         result.textContent="error";
         return;
     }
-    let result=operate(Number(firstNumber),Number(secondNumber),operator);
-    result.textContent=String(result);
+    let result=operate(Number.parseInt(firstNumber),Number.parseInt(secondNumber),operator);
+    result.textContent=Number.toString(result);
     firstNumber=result.textContent;
     operator="";
     secondNumber="";
