@@ -38,24 +38,24 @@ let secondNumber="";
 let operator="";
 let display="";
 function operate(firstNumber,secondNumber,operator){
-    let result;
+    let operationResult;
     if(operator==="+"){
-        result=add(firstNumber,secondNumber);
+        operationResult=add(firstNumber,secondNumber);
     }
     else if(operator==="-"){
-        result=subtract(firstNumber,secondNumber);
+    operationResult=subtract(firstNumber,secondNumber);
     }
     else if(operator==="*"){
-        result=multiply(firstNumber,secondNumber);
+        operationResult=multiply(firstNumber,secondNumber);
     }
     else if(operator==="/"){
-        return divide(firstNumber,secondNumber);
+        operationResult=divide(firstNumber,secondNumber);
 
     }
     else{
-        result="error";
+        operationResult="error";
     }
-    return result;
+    return operationResult;
 }
 
 let displayArea=document.querySelector("#display");
@@ -189,8 +189,8 @@ equals.addEventListener("click",()=>{
         result.textContent="error";
         return;
     }
-    let result=operate(Number.parseInt(firstNumber),Number.parseInt(secondNumber),operator);
-    result.textContent=Number.toString(result);
+    let currentResult=operate(Number(firstNumber),Number(secondNumber),operator);
+    result.textContent=String(currentResult);
     firstNumber=result.textContent;
     operator="";
     secondNumber="";
